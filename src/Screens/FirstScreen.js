@@ -85,9 +85,9 @@ export default class FirstScreen extends Component {
                     ListFooterComponent={this.renderFooter}
                     refreshing={this.state.refreshing}
                     onRefresh={this.handleRefresh}
-                    renderItem={({ item }) => (
+                    renderItem={({ item, index }) => (
                         <View>
-                            <TouchableOpacity activeOpacity={0.5} onPress={() => alert('sjfjhsfg')}>
+                            <TouchableOpacity activeOpacity={0.5} onPress={() => this.props.navigation.navigate('Second', { PassDataToNext: item })}>
                                 <View style={styles.mainView}>
                                     <View>
                                         <Image source={{ uri: item.url }}
